@@ -1,0 +1,62 @@
+#desplegableTipo {
+    width: 200px;
+    margin-bottom: 10px;
+    margin-left: 10px;
+}
+#filtros{
+    padding: 2%;
+}
+.flecha {
+    padding-left: 10px;
+}
+.importe{
+    font-size: 20px;
+    position: absolute;
+    right: 0;
+    padding-right: 20px;
+}
+.coste{
+    font-size: 20px;
+    width: 120px;
+    justify-content: center;
+    text-align: center;
+}
+.title {
+    max-width: 200px;
+}
+.fechas{
+    width: 200px;
+    margin-left: 10px;
+    margin-right: 30px;
+}
+.filtroFecha{
+   margin-right: 10px; 
+   margin-top: 10px;
+   margin-bottom: 10px;
+}
+.colorWhite{
+    color: white
+}
+.oculto{
+    display: none;
+}
+.empresas, .hoteles, .habitaciones {
+    padding: 10px;
+    border-radius: 12px
+}
+.empresas{
+    background-color: rgb(0, 68, 146);
+}
+.hoteles{
+    background-color: rgb(103, 162, 252);
+}
+.habitaciones{
+    background-color: rgb(199, 212, 255);
+}
+.card{
+    border: none !important;
+}
+.card-body{
+    padding-right: 0 !important;
+    padding-left: 5% !important;
+}

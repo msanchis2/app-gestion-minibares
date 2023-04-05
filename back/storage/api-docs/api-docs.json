@@ -1,0 +1,1617 @@
+{
+    "openapi": "3.0.0",
+    "info": {
+        "title": "OpenApi documentación de Minibares",
+        "description": "Class LogController",
+        "version": "1.0.0"
+    },
+    "paths": {
+        "/api/habitaciones": {
+            "get": {
+                "tags": [
+                    "Habitaciones"
+                ],
+                "summary": "Obtener listado de habitaciones",
+                "description": "Display a listing of the resource.",
+                "operationId": "getHabitaciones",
+                "responses": {
+                    "200": {
+                        "description": "Listado de habitaciones"
+                    },
+                    "default": {
+                        "description": "Ha ocurrido un error."
+                    }
+                }
+            },
+            "post": {
+                "tags": [
+                    "Habitaciones"
+                ],
+                "summary": "Crear una nueva habitación",
+                "description": "Store a newly created resource in storage.",
+                "operationId": "insertHabitaciones",
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "required": [
+                                    "hotelId",
+                                    "nombre",
+                                    "imagen"
+                                ],
+                                "properties": {
+                                    "hotelId": {
+                                        "description": "Id del hotel",
+                                        "type": "integer"
+                                    },
+                                    "nombre": {
+                                        "description": "Nombre de la habitación",
+                                        "type": "string"
+                                    },
+                                    "imagen": {
+                                        "description": "Imagen de la habitación",
+                                        "type": "string"
+                                    }
+                                },
+                                "type": "object"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "Habitación creada correctamente"
+                    },
+                    "default": {
+                        "description": "Ha ocurrido un error."
+                    }
+                }
+            }
+        },
+        "/api/habitaciones/{id}": {
+            "get": {
+                "tags": [
+                    "Habitaciones"
+                ],
+                "summary": "Obtener Habitación por Id",
+                "description": "Display the specified resource.",
+                "operationId": "getHabitacionById",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "Id de la habitación",
+                        "required": true,
+                        "schema": {
+                            "type": "integer",
+                            "format": "int64"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Habitación encontrada"
+                    },
+                    "default": {
+                        "description": "Ha ocurrido un error."
+                    }
+                }
+            },
+            "put": {
+                "tags": [
+                    "Habitaciones"
+                ],
+                "summary": "Actualizar habitación por Id",
+                "description": "Update the specified resource in storage.",
+                "operationId": "updateHabitacion",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "Id de la habitación",
+                        "required": true,
+                        "schema": {
+                            "type": "integer",
+                            "format": "int64"
+                        }
+                    }
+                ],
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "required": [
+                                    "hotelId",
+                                    "nombre",
+                                    "imagen"
+                                ],
+                                "properties": {
+                                    "hotelId": {
+                                        "description": "Id del hotel",
+                                        "type": "integer"
+                                    },
+                                    "nombre": {
+                                        "description": "Nombre de la habitación",
+                                        "type": "string"
+                                    },
+                                    "imagen": {
+                                        "description": "Imagen de la habitación",
+                                        "type": "string"
+                                    }
+                                },
+                                "type": "object"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "Habitación actualizada correctamente"
+                    },
+                    "default": {
+                        "description": "Ha ocurrido un error."
+                    }
+                }
+            },
+            "delete": {
+                "tags": [
+                    "Habitaciones"
+                ],
+                "summary": "Eliminar habitación por Id",
+                "operationId": "deleteHabitacion",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "Id de la habitación",
+                        "required": true,
+                        "schema": {
+                            "type": "integer",
+                            "format": "int64"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Habitación eliminada correctamente"
+                    },
+                    "default": {
+                        "description": "Ha ocurrido un error."
+                    }
+                }
+            }
+        },
+        "/api/hoteles": {
+            "get": {
+                "tags": [
+                    "Hoteles"
+                ],
+                "summary": "listar hoteles",
+                "description": "Display a listing of the resource.",
+                "operationId": "88efeb5bd9555b55dbd8009d2a08d87a",
+                "responses": {
+                    "200": {
+                        "description": "mostrar hoteles."
+                    }
+                }
+            },
+            "post": {
+                "tags": [
+                    "Hoteles"
+                ],
+                "summary": "guardar hotel",
+                "description": "Store a newly created resource in storage.",
+                "operationId": "05eb79906ed2370ac8a6b2dc4c37946a",
+                "requestBody": {
+                    "description": "Datos para guardar un hotel",
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "properties": {
+                                    "empresaId": {
+                                        "type": "integer"
+                                    },
+                                    "nombre": {
+                                        "type": "string"
+                                    },
+                                    "direccion": {
+                                        "type": "string"
+                                    },
+                                    "telefonoContacto": {
+                                        "type": "string"
+                                    },
+                                    "personaContacto": {
+                                        "type": "string"
+                                    },
+                                    "imagen": {
+                                        "type": "string"
+                                    }
+                                },
+                                "type": "object"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "guardar un hotel."
+                    }
+                }
+            }
+        },
+        "/api/hoteles/{id}": {
+            "get": {
+                "tags": [
+                    "Hoteles"
+                ],
+                "summary": "mostrar hotel por id",
+                "description": "Display the specified resource.",
+                "operationId": "700f9f1a280d2ca8679b59b0455e6f8b",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "required": true,
+                        "schema": {
+                            "type": "integer"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "mostrar un hotel por id."
+                    }
+                }
+            },
+            "put": {
+                "tags": [
+                    "Hoteles"
+                ],
+                "summary": "Actualizar hotel por id",
+                "description": "Update the specified resource in storage.",
+                "operationId": "f9cfaba8f53e83675dea4cb9c71378f1",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "required": true,
+                        "schema": {
+                            "type": "integer"
+                        }
+                    }
+                ],
+                "requestBody": {
+                    "description": "Datos para actualizar un hotel",
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "properties": {
+                                    "empresaId": {
+                                        "type": "integer"
+                                    },
+                                    "nombre": {
+                                        "type": "string"
+                                    },
+                                    "direccion": {
+                                        "type": "string"
+                                    },
+                                    "telefonoContacto": {
+                                        "type": "string"
+                                    },
+                                    "personaContacto": {
+                                        "type": "string"
+                                    },
+                                    "imagen": {
+                                        "type": "string"
+                                    }
+                                },
+                                "type": "object"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "actualizar un hotel por id."
+                    }
+                }
+            },
+            "delete": {
+                "tags": [
+                    "Hoteles"
+                ],
+                "summary": "Eliminar hotel por id",
+                "operationId": "04618d16a53b042046dbc03601affeb7",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "required": true,
+                        "schema": {
+                            "type": "integer"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "eliminar un hotel por id."
+                    }
+                }
+            }
+        },
+        "/api/inventarios": {
+            "get": {
+                "tags": [
+                    "Invetario"
+                ],
+                "summary": "Mostrar información de los inventarios",
+                "description": "Display a listing of the resource.",
+                "operationId": "721655bcda437b9623a493da77e2fd43",
+                "responses": {
+                    "200": {
+                        "description": "Mostrar información de los inventarios."
+                    },
+                    "default": {
+                        "description": "Ha ocurrido un error."
+                    }
+                }
+            },
+            "post": {
+                "tags": [
+                    "Invetario"
+                ],
+                "summary": "Crear un inventario",
+                "description": "Store a newly created resource in storage.",
+                "operationId": "e2544a669fb3cce9342d9cf42dfbf205",
+                "requestBody": {
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "properties": {
+                                    "productoId": {
+                                        "type": "integer"
+                                    },
+                                    "fechaCaducidad": {
+                                        "type": "string"
+                                    },
+                                    "situacion": {
+                                        "type": "string"
+                                    },
+                                    "habitacionId": {
+                                        "type": "integer"
+                                    }
+                                },
+                                "type": "object",
+                                "example": {
+                                    "productoId": 1,
+                                    "fechaCaducidad": "2020-01-01",
+                                    "situacion": "A",
+                                    "habitacionId": null
+                                }
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "Crear un inventario."
+                    },
+                    "default": {
+                        "description": "Ha ocurrido un error."
+                    }
+                }
+            }
+        },
+        "/api/inventarios/{id}": {
+            "get": {
+                "tags": [
+                    "Invetario"
+                ],
+                "summary": "Mostrar información de un inventario específico",
+                "description": "Display the specified resource.",
+                "operationId": "61ca5382ad56e1c47831198872094a4a",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "required": true,
+                        "schema": {
+                            "type": "integer"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Mostrar información de un inventario específico."
+                    },
+                    "default": {
+                        "description": "Ha ocurrido un error."
+                    }
+                }
+            },
+            "put": {
+                "tags": [
+                    "Invetario"
+                ],
+                "summary": "Actualizar un inventario específico",
+                "description": "Update the specified resource in storage.",
+                "operationId": "dd96c5e900591f5e268aa18a8320e524",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "required": true,
+                        "schema": {
+                            "type": "integer"
+                        }
+                    }
+                ],
+                "requestBody": {
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "properties": {
+                                    "productoId": {
+                                        "type": "integer"
+                                    },
+                                    "fechaCaducidad": {
+                                        "type": "string"
+                                    },
+                                    "situacion": {
+                                        "type": "string"
+                                    },
+                                    "habitacionId": {
+                                        "type": "integer"
+                                    }
+                                },
+                                "type": "object",
+                                "example": {
+                                    "productoId": 1,
+                                    "fechaCaducidad": "2020-01-01",
+                                    "situacion": "A",
+                                    "habitacionId": null
+                                }
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "Actualizar un inventario específico."
+                    },
+                    "default": {
+                        "description": "Ha ocurrido un error."
+                    }
+                }
+            },
+            "delete": {
+                "tags": [
+                    "Invetario"
+                ],
+                "summary": "Eliminar un inventario específico",
+                "operationId": "72192e1c345bc6be025c87d0b8b860d4",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "required": true,
+                        "schema": {
+                            "type": "integer"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Eliminar un inventario específico."
+                    },
+                    "default": {
+                        "description": "Ha ocurrido un error."
+                    }
+                }
+            }
+        },
+        "/api/log_not_founds": {
+            "get": {
+                "tags": [
+                    "LogNotFound"
+                ],
+                "summary": "List all log_not_founds",
+                "description": "Display a listing of the resource.",
+                "operationId": "df5aa9190fb356f69b7dccaa21af1876",
+                "responses": {
+                    "200": {
+                        "description": "Successful operation"
+                    },
+                    "default": {
+                        "description": "Ha ocurrido un error."
+                    }
+                }
+            }
+        },
+        "/log_not_founds": {
+            "post": {
+                "tags": [
+                    "LogNotFound"
+                ],
+                "summary": "Crear un log not found",
+                "description": "Store a newly created resource in storage.",
+                "operationId": "a6257d6261fce308253b67ecb537b95a",
+                "requestBody": {
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "properties": {
+                                    "fechaCreacion": {
+                                        "type": "string"
+                                    },
+                                    "usuarioId": {
+                                        "type": "string"
+                                    },
+                                    "usuarioNombre": {
+                                        "type": "string"
+                                    },
+                                    "usuarioRolesId": {
+                                        "type": "string"
+                                    },
+                                    "nombreEmpresa": {
+                                        "type": "string"
+                                    },
+                                    "controlador": {
+                                        "type": "string"
+                                    },
+                                    "accion": {
+                                        "type": "string"
+                                    },
+                                    "codigoError": {
+                                        "type": "string"
+                                    },
+                                    "mensage": {
+                                        "type": "string"
+                                    }
+                                },
+                                "type": "object",
+                                "example": {
+                                    "fechaCreacion": "2020-01-01T00:00:00",
+                                    "usuarioId": "1",
+                                    "usuarioNombre": "Admin",
+                                    "usuarioRolesId": "1",
+                                    "nombreEmpresa": "MyCompany",
+                                    "controlador": "Inventarios",
+                                    "accion": "index",
+                                    "codigoError": "404",
+                                    "mensage": "No existen inventarios"
+                                }
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "Crear un log not found."
+                    },
+                    "default": {
+                        "description": "Ha ocurrido un error."
+                    }
+                }
+            }
+        },
+        "/log_not_founds/{id}": {
+            "get": {
+                "tags": [
+                    "LogNotFound"
+                ],
+                "summary": "Mostrar información de un log not found específico",
+                "description": "Display the specified resource.",
+                "operationId": "e162b944a15d8bb903ff674993860221",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "required": true,
+                        "schema": {
+                            "type": "integer"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Mostrar información de un log not found específico."
+                    },
+                    "default": {
+                        "description": "Ha ocurrido un error."
+                    }
+                }
+            },
+            "put": {
+                "tags": [
+                    "LogNotFound"
+                ],
+                "summary": "Actualizar un log not found específico",
+                "description": "Update the specified resource in storage.",
+                "operationId": "02ac35a1756053f4204ef3181d1720d2",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "required": true,
+                        "schema": {
+                            "type": "integer"
+                        }
+                    }
+                ],
+                "requestBody": {
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "properties": {
+                                    "fechaCreacion": {
+                                        "type": "string"
+                                    },
+                                    "usuarioId": {
+                                        "type": "string"
+                                    },
+                                    "usuarioNombre": {
+                                        "type": "string"
+                                    },
+                                    "usuarioRolesId": {
+                                        "type": "string"
+                                    },
+                                    "nombreEmpresa": {
+                                        "type": "string"
+                                    },
+                                    "controlador": {
+                                        "type": "string"
+                                    },
+                                    "accion": {
+                                        "type": "string"
+                                    },
+                                    "codigoError": {
+                                        "type": "string"
+                                    },
+                                    "mensage": {
+                                        "type": "string"
+                                    }
+                                },
+                                "type": "object",
+                                "example": {
+                                    "fechaCreacion": "2020-01-01T00:00:00",
+                                    "usuarioId": "1",
+                                    "usuarioNombre": "Admin",
+                                    "usuarioRolesId": "1",
+                                    "nombreEmpresa": "MyCompany",
+                                    "controlador": "Inventarios",
+                                    "accion": "index",
+                                    "codigoError": "404",
+                                    "mensage": "No existen inventarios"
+                                }
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "Actualizar un log not found específico."
+                    },
+                    "default": {
+                        "description": "Ha ocurrido un error."
+                    }
+                }
+            },
+            "delete": {
+                "tags": [
+                    "LogNotFound"
+                ],
+                "summary": "Eliminar un log not found específico",
+                "operationId": "09569db5550d1b0a49f7f7ca357bb343",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "required": true,
+                        "schema": {
+                            "type": "integer"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Eliminar un log not found específico."
+                    },
+                    "default": {
+                        "description": "Ha ocurrido un error."
+                    }
+                }
+            }
+        },
+        "/api/posteos": {
+            "get": {
+                "tags": [
+                    "Posteos"
+                ],
+                "summary": "Display a listing of the resource.",
+                "description": "Obtiene la lista de posteos",
+                "operationId": "823786dabab8ebbe11edffedeb61f654",
+                "responses": {
+                    "200": {
+                        "description": "Lista de posteos."
+                    },
+                    "default": {
+                        "description": "Ha ocurrido un error."
+                    }
+                }
+            },
+            "post": {
+                "tags": [
+                    "Posteos"
+                ],
+                "summary": "Store a newly created resource in storage.",
+                "description": "Crea un posteo",
+                "operationId": "689596494a575f9a6ec2ad4c750804d6",
+                "requestBody": {
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "required": [
+                                    "inventarioId",
+                                    "tipoId",
+                                    "fecha"
+                                ],
+                                "properties": {
+                                    "inventarioId": {
+                                        "type": "integer"
+                                    },
+                                    "tipoId": {
+                                        "type": "integer"
+                                    },
+                                    "fecha": {
+                                        "type": "string",
+                                        "format": "date-time"
+                                    }
+                                },
+                                "type": "object"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "Posteo creado."
+                    },
+                    "default": {
+                        "description": "Ha ocurrido un error."
+                    }
+                }
+            }
+        },
+        "/api/posteos/{id}": {
+            "get": {
+                "tags": [
+                    "Posteos"
+                ],
+                "summary": "Display the specified resource.",
+                "description": "Obtiene un posteo por su id",
+                "operationId": "fa1cc0e5541c302dd4d2f5a014b998b5",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "Id del posteo a obtener",
+                        "required": true,
+                        "schema": {
+                            "type": "integer"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Posteo obtenido."
+                    },
+                    "default": {
+                        "description": "Ha ocurrido un error."
+                    }
+                }
+            },
+            "put": {
+                "tags": [
+                    "Posteos"
+                ],
+                "summary": "Update the specified resource in storage.",
+                "description": "Actualiza un posteo",
+                "operationId": "8864ab6f1a25bc658ed3a879b41f83c9",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "Id del posteo a actualizar",
+                        "required": true,
+                        "schema": {
+                            "type": "integer"
+                        }
+                    }
+                ],
+                "requestBody": {
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "required": [
+                                    "inventarioId",
+                                    "tipoId",
+                                    "fecha"
+                                ],
+                                "properties": {
+                                    "inventarioId": {
+                                        "type": "integer"
+                                    },
+                                    "tipoId": {
+                                        "type": "integer"
+                                    },
+                                    "fecha": {
+                                        "type": "string",
+                                        "format": "date-time"
+                                    }
+                                },
+                                "type": "object"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "Posteo actualizado."
+                    },
+                    "default": {
+                        "description": "Ha ocurrido un error."
+                    }
+                }
+            },
+            "delete": {
+                "tags": [
+                    "Posteos"
+                ],
+                "description": "Elimina un posteo por su id",
+                "operationId": "4e3f147730839b032449fec45fb0445f",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "Id del posteo a eliminar",
+                        "required": true,
+                        "schema": {
+                            "type": "integer"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Posteo eliminado."
+                    },
+                    "default": {
+                        "description": "Ha ocurrido un error."
+                    }
+                }
+            }
+        },
+        "/api/productos": {
+            "get": {
+                "tags": [
+                    "Productos"
+                ],
+                "summary": "Display a listing of the resource.",
+                "description": "Obtiene la lista de productos",
+                "operationId": "496dc08306524d77f18d124d1d6838aa",
+                "responses": {
+                    "200": {
+                        "description": "Lista de productos."
+                    },
+                    "default": {
+                        "description": "Ha ocurrido un error."
+                    }
+                }
+            },
+            "post": {
+                "tags": [
+                    "Productos"
+                ],
+                "summary": "Store a newly created resource in storage.",
+                "description": "Crea un producto",
+                "operationId": "48b59f126c849beb4d4de4ff83b7945f",
+                "requestBody": {
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "required": [
+                                    "nombre",
+                                    "descripcion",
+                                    "imagen"
+                                ],
+                                "properties": {
+                                    "nombre": {
+                                        "type": "string"
+                                    },
+                                    "descripcion": {
+                                        "type": "string"
+                                    },
+                                    "imagen": {
+                                        "type": "string"
+                                    }
+                                },
+                                "type": "object"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "Producto creado."
+                    },
+                    "default": {
+                        "description": "Ha ocurrido un error."
+                    }
+                }
+            }
+        },
+        "/api/productos/{id}": {
+            "get": {
+                "tags": [
+                    "Productos"
+                ],
+                "summary": "Display the specified resource.",
+                "description": "Obtiene un producto por su id",
+                "operationId": "672fde814ef8716ee902835cc96ae595",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "Id del producto a obtener",
+                        "required": true,
+                        "schema": {
+                            "type": "integer"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Producto obtenido."
+                    },
+                    "default": {
+                        "description": "Ha ocurrido un error."
+                    }
+                }
+            },
+            "put": {
+                "tags": [
+                    "Productos"
+                ],
+                "summary": "Update the specified resource in storage.",
+                "description": "Actualiza un producto",
+                "operationId": "20b20d8e59992eb88abad7dcef3db6d7",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "Id del producto a actualizar",
+                        "required": true,
+                        "schema": {
+                            "type": "integer"
+                        }
+                    }
+                ],
+                "requestBody": {
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "required": [
+                                    "nombre",
+                                    "descripcion",
+                                    "imagen"
+                                ],
+                                "properties": {
+                                    "nombre": {
+                                        "type": "string"
+                                    },
+                                    "descripcion": {
+                                        "type": "string"
+                                    },
+                                    "imagen": {
+                                        "type": "string"
+                                    }
+                                },
+                                "type": "object"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "Producto actualizado."
+                    },
+                    "default": {
+                        "description": "Ha ocurrido un error."
+                    }
+                }
+            },
+            "delete": {
+                "tags": [
+                    "Productos"
+                ],
+                "description": "Elimina un producto por su id",
+                "operationId": "4c0c7680428675134afd4d793f934f67",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "Id del producto a eliminar",
+                        "required": true,
+                        "schema": {
+                            "type": "integer"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Producto eliminado."
+                    },
+                    "default": {
+                        "description": "Ha ocurrido un error."
+                    }
+                }
+            }
+        },
+        "/api/roles": {
+            "get": {
+                "tags": [
+                    "Roles"
+                ],
+                "summary": "List all roles",
+                "description": "Display a listing of the resource.",
+                "operationId": "bf78d43aa8b5c576b78b08b73c404cb6",
+                "responses": {
+                    "200": {
+                        "description": "Successful operation"
+                    },
+                    "default": {
+                        "description": "Ha ocurrido un error."
+                    }
+                }
+            },
+            "post": {
+                "tags": [
+                    "Roles"
+                ],
+                "summary": "Crear Rol",
+                "description": "Store a newly created resource in storage.",
+                "operationId": "19029466a195a478441990551cb1e8c9",
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "required": [
+                                    "nombre",
+                                    "activoSN"
+                                ],
+                                "properties": {
+                                    "nombre": {
+                                        "type": "string"
+                                    },
+                                    "activoSN": {
+                                        "type": "string"
+                                    }
+                                },
+                                "type": "object"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "Rol creado."
+                    },
+                    "422": {
+                        "description": "Error en los parametros enviados."
+                    }
+                },
+                "security": [
+                    {
+                        "bearerAuth": []
+                    }
+                ]
+            }
+        },
+        "/api/roles/{id}": {
+            "get": {
+                "tags": [
+                    "Roles"
+                ],
+                "summary": "Mostrar Rol",
+                "description": "Display the specified resource.",
+                "operationId": "bcca3423f39b15abd0d0214dd6169f3c",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "required": true,
+                        "schema": {
+                            "type": "integer",
+                            "format": "int64"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Rol encontrado."
+                    },
+                    "404": {
+                        "description": "Rol no encontrado."
+                    }
+                },
+                "security": [
+                    {
+                        "bearerAuth": []
+                    }
+                ]
+            },
+            "put": {
+                "tags": [
+                    "Roles"
+                ],
+                "summary": "Actualizar Rol",
+                "description": "Update the specified resource in storage.",
+                "operationId": "0444e2e7859bbaa81749d090c06415a1",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "required": true,
+                        "schema": {
+                            "type": "integer",
+                            "format": "int64"
+                        }
+                    }
+                ],
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "required": [
+                                    "nombre",
+                                    "activoSN"
+                                ],
+                                "properties": {
+                                    "nombre": {
+                                        "type": "string"
+                                    },
+                                    "activoSN": {
+                                        "type": "string"
+                                    }
+                                },
+                                "type": "object"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "Rol actualizado."
+                    },
+                    "422": {
+                        "description": "Error en los parametros enviados."
+                    }
+                },
+                "security": [
+                    {
+                        "bearerAuth": []
+                    }
+                ]
+            },
+            "delete": {
+                "tags": [
+                    "Roles"
+                ],
+                "summary": "Eliminar Rol",
+                "operationId": "de55f66883ee7b0d98d50e5e82e94f7e",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "required": true,
+                        "schema": {
+                            "type": "integer",
+                            "format": "int64"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Rol eliminado."
+                    },
+                    "404": {
+                        "description": "Rol no encontrado."
+                    }
+                },
+                "security": [
+                    {
+                        "bearerAuth": []
+                    }
+                ]
+            }
+        },
+        "/api/roles_permisos": {
+            "get": {
+                "tags": [
+                    "RolesPermisos"
+                ],
+                "summary": "List all roles_permisos",
+                "description": "Display a listing of the resource.",
+                "operationId": "245c38cfaa7de1d7ca7e1b7de0b58f56",
+                "responses": {
+                    "200": {
+                        "description": "Successful operation"
+                    },
+                    "default": {
+                        "description": "Ha ocurrido un error."
+                    }
+                }
+            }
+        },
+        "/api/roles_permisos/{roleId}": {
+            "post": {
+                "tags": [
+                    "RolesPermisos"
+                ],
+                "summary": "Registra un permiso de un rol",
+                "description": "Registra un permiso de un rol",
+                "operationId": "storeRolesPermisos",
+                "parameters": [
+                    {
+                        "name": "roleId",
+                        "in": "path",
+                        "description": "ID del rol",
+                        "required": true,
+                        "schema": {
+                            "type": "integer"
+                        }
+                    }
+                ],
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "properties": {
+                                    "roleId": {
+                                        "description": "Role Id relacionado",
+                                        "type": "string"
+                                    },
+                                    "controlador": {
+                                        "description": "Controlador que se ejecuta",
+                                        "type": "string"
+                                    },
+                                    "accion": {
+                                        "description": "Acción que se ejecuta",
+                                        "type": "string"
+                                    }
+                                },
+                                "type": "object"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "Permiso creado correctamente"
+                    },
+                    "400": {
+                        "description": "Bad Request"
+                    },
+                    "404": {
+                        "description": "Resource Not Found"
+                    }
+                },
+                "security": [
+                    {
+                        "api_key_security_example": []
+                    }
+                ]
+            }
+        },
+        "/api/roles_permisos/{id}": {
+            "get": {
+                "tags": [
+                    "RolesPermisos"
+                ],
+                "summary": "Obtiene un permiso de un rol",
+                "description": "Obtiene un permiso con el id especificado de un rol",
+                "operationId": "showRolesPermisosById",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "ID del permiso",
+                        "required": true,
+                        "schema": {
+                            "type": "integer"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Success"
+                    },
+                    "400": {
+                        "description": "Bad Request"
+                    },
+                    "404": {
+                        "description": "Resource Not Found"
+                    }
+                },
+                "security": [
+                    {
+                        "api_key_security_example": []
+                    }
+                ]
+            },
+            "put": {
+                "tags": [
+                    "RolesPermisos"
+                ],
+                "summary": "Actualiza un permiso de un rol",
+                "description": "Actualiza un permiso con el id especificado de un rol",
+                "operationId": "updateRolesPermisosById",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "ID del permiso",
+                        "required": true,
+                        "schema": {
+                            "type": "integer"
+                        }
+                    }
+                ],
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "properties": {
+                                    "roleId": {
+                                        "description": "Role Id relacionado",
+                                        "type": "string"
+                                    },
+                                    "controlador": {
+                                        "description": "Controlador que se ejecuta",
+                                        "type": "string"
+                                    },
+                                    "accion": {
+                                        "description": "Acción que se ejecuta",
+                                        "type": "string"
+                                    }
+                                },
+                                "type": "object"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "Success"
+                    },
+                    "400": {
+                        "description": "Bad Request"
+                    },
+                    "404": {
+                        "description": "Resource Not Found"
+                    }
+                },
+                "security": [
+                    {
+                        "api_key_security_example": []
+                    }
+                ]
+            }
+        },
+        "/api/roles_permisos{id}": {
+            "delete": {
+                "tags": [
+                    "RolesPermisos"
+                ],
+                "summary": "Elimina un permiso de un rol",
+                "description": "Elimina un permiso con el id especificado de un rol",
+                "operationId": "destroyRolesPermisosById",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "ID del permiso",
+                        "required": true,
+                        "schema": {
+                            "type": "integer"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Success"
+                    },
+                    "400": {
+                        "description": "Bad Request"
+                    },
+                    "404": {
+                        "description": "Resource Not Found"
+                    }
+                },
+                "security": [
+                    {
+                        "api_key_security_example": []
+                    }
+                ]
+            }
+        },
+        "/api/tipos_posteos": {
+            "get": {
+                "tags": [
+                    "TiposPosteos"
+                ],
+                "summary": "List all tipos_posteos",
+                "description": "Display a listing of the resource.",
+                "operationId": "b9ebea6e77dcf808b8b8c360de417f8b",
+                "responses": {
+                    "200": {
+                        "description": "Successful operation"
+                    },
+                    "default": {
+                        "description": "Ha ocurrido un error."
+                    }
+                }
+            },
+            "post": {
+                "tags": [
+                    "TiposPosteos"
+                ],
+                "summary": "Crea un tipo de posteo",
+                "description": "Metodo para crear un tipo de posteo",
+                "operationId": "00f99d6b4afb0d67a7ed424ac0d713b8",
+                "requestBody": {
+                    "description": "Objeto JSON que contiene los datos para crear un nuevo tipo de posteo",
+                    "required": true
+                },
+                "responses": {
+                    "200": {
+                        "description": "Tipo de posteo creado con exito."
+                    },
+                    "default": {
+                        "description": "Ha ocurrido un error."
+                    }
+                }
+            }
+        },
+        "/api/tipos_posteos/{id}": {
+            "get": {
+                "tags": [
+                    "TiposPosteos"
+                ],
+                "summary": "Obtiene un tipo de posteo",
+                "description": "Metodo para obtener un tipo de posteo.",
+                "operationId": "162cd7b39a560225064bf9aa38d92857",
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "properties": {
+                                    "nombre": {
+                                        "description": "Nombre del tipo",
+                                        "type": "string"
+                                    },
+                                    "descripcion": {
+                                        "description": "Descripcion del tipo",
+                                        "type": "string"
+                                    },
+                                    "facturaSN": {
+                                        "description": "Indica si es un valor a añadir en la factura o no",
+                                        "type": "string"
+                                    }
+                                },
+                                "type": "object"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "Tipo de posteo obtenido con exito."
+                    },
+                    "default": {
+                        "description": "Ha ocurrido un error."
+                    }
+                }
+            },
+            "put": {
+                "tags": [
+                    "TiposPosteos"
+                ],
+                "summary": "Actualiza un tipo de posteo",
+                "description": "Metodo para actualizar un tipo de posteo",
+                "operationId": "578fd642834b964182a27ce3af659d27",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "id del tipo de posteo.",
+                        "required": true,
+                        "schema": {
+                            "type": "integer"
+                        }
+                    }
+                ],
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "properties": {
+                                    "nombre": {
+                                        "description": "Nombre del tipo",
+                                        "type": "string"
+                                    },
+                                    "descripcion": {
+                                        "description": "Descripcion del tipo",
+                                        "type": "string"
+                                    },
+                                    "facturaSN": {
+                                        "description": "Indica si es un valor a añadir en la factura o no",
+                                        "type": "string"
+                                    }
+                                },
+                                "type": "object"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "Tipo de posteo actualizado con exito."
+                    },
+                    "default": {
+                        "description": "Ha ocurrido un error."
+                    }
+                }
+            }
+        },
+        "/api//tipos_posteos/{id}": {
+            "delete": {
+                "tags": [
+                    "TiposPosteos"
+                ],
+                "summary": "Elimina un tipo de posteo",
+                "description": "Metodo para eliminar un tipo de posteo",
+                "operationId": "1ada80c2a1cf64b20f3e3540da9d7a9c",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "id del tipo de posteo.",
+                        "required": true,
+                        "schema": {
+                            "type": "integer"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Tipo de posteo eliminado con exito."
+                    },
+                    "default": {
+                        "description": "Ha ocurrido un error."
+                    }
+                }
+            }
+        }
+    }
+}

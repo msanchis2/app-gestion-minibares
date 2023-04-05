@@ -1,0 +1,25 @@
+#tablaPermisos{
+    .tituloPagina{
+        color: white;
+        background: rgb(26, 26, 41);
+        padding: 30px;
+        td{
+            padding: 8px;
+        }
+    }
+    .lineaCheckbox{
+        padding: 20px;
+        td{
+            width: 100px;
+            padding-left: 20px;
+            padding-bottom: 10px;
+            padding-top: 10px;
+        }
+    }
+    #cabecera{
+        th{
+            padding-left: 20px;
+            padding-bottom: 10px;
+        }
+    }
+}

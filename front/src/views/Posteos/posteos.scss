@@ -1,0 +1,20 @@
+.desplegable{
+    width: 200px;
+    margin-right: 10px;
+    margin-left: 10px;
+}
+.imagenProd{
+    margin-right: 10px;
+    width: 120px;
+    height: 120px;
+}
+.seleccionado{
+    border: 3px solid green;
+    border-radius: 20px;
+}
+.btn-accion {
+    width: 100px;
+}
+.elementoProducto-inactivo{
+    filter: grayscale(100%)
+}

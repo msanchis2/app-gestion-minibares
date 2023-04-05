@@ -1,0 +1,22 @@
+.cuadrado{
+    width: 240px; 
+    height: 240px;
+    border-radius: 12px;
+}
+.contenedor { 
+    display: flex; 
+    flex-wrap: wrap; 
+    //flex-direction: column; 
+  }
+input[type='number'] {
+    width: 240px;
+    margin-top: 8px;
+    border-radius: 5px;
+    padding: 0px 0px 0px 8px;
+}
+.elementoProducto-activo{
+    filter: grayscale(0%)
+}
+.elementoProducto-inactivo{
+    filter: grayscale(100%)
+}
